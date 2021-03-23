@@ -1,0 +1,31 @@
+.intro {
+
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#start-button {
+    margin: auto;
+    height: 100px;
+    width: 300px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 7px;
+
+}
+
+canvas {
+
+    border: 1px solid black;
+}
+
+#montain {
+
+    display: none;
+}
+
+#bird {
+
+    display: none;
+}
