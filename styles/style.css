@@ -1,31 +1,43 @@
-.intro {
-
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-#start-button {
-    margin: auto;
-    height: 100px;
-    width: 300px;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 7px;
-
-}
-
 canvas {
-
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
 #montain {
-
-    display: none;
+  display: none;
 }
 
 #bird {
+  display: none;
+}
 
-    display: none;
+/* Character 1 */
+
+#character1f {
+  display: none;
+}
+
+#character1l {
+  display: none;
+}
+
+#character1r {
+  display: none;
+}
+
+/* Character 2 */
+
+#character2f {
+  display: none;
+}
+
+#character2l {
+  display: none;
+}
+
+#character2r {
+  display: none;
+}
+
+#perso {
+  display: none;
 }
