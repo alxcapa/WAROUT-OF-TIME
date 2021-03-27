@@ -2,6 +2,15 @@ canvas {
   border: 1px solid black;
 }
 
+/* <section id="game-over" class="active"> -> .classList.toggle('active') */
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
 #montain {
   display: none;
 }

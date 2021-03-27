@@ -1,4 +1,4 @@
-let perso1, loop, controller, img;
+let perso, perso2, loop, controller, img;
 
 
 const ctx = document.querySelector("#canvas").getContext("2d");
@@ -7,26 +7,9 @@ const W = ctx.canvas.width;
 const H = ctx.canvas.height;
 
 
-let persoTest = new Gorvenal();
-
-
-
-// persoTest = new Cyborg();
-
-
-perso1 = {
-
-    h: 404.3126684636119,
-
-    jumping: false,
-    w: 200,
-    x: 250,
-    x_velocity: 0,
-    y_velocity: 0,
-    y: 432
-
-}
-
+perso = new Gorvenal();
+perso2 = new Cyborg();
+console.log(perso2);
 
 
 
@@ -39,14 +22,6 @@ perso1 = {
 
 // startGame();
 
-
-function startGame() {
-
-    img = document.querySelector("#perso")
-
-}
-
-startGame();
 
 
 
@@ -77,55 +52,55 @@ controller = {
 
 }
 
+function update() {
 
-loop = function () {
+    //PERSO 1
+    if (controller.up) {
 
-    if (controller.up && perso1.jumping == false) {
-
-        perso1.y_velocity -= 20;
-        perso1.jumping = true;
-
+        perso.jump()
     }
 
     if (controller.left) {
 
-        perso1.x_velocity -= 0.5;
+
+        perso.moveLeft();
 
     }
 
     if (controller.right) {
 
-        perso1.x_velocity += 0.5;
+        perso.moveRight();
 
     }
 
-    perso1.y_velocity += 1.5; // gravity
-    perso1.x += perso1.x_velocity;
-    perso1.y += perso1.y_velocity;
-    perso1.x_velocity *= 0.9; // friction
-    perso1.y_velocity *= 0.9; // friction
+    perso.update();
 
-    // if rectangle is falling below floor line
-    if (perso1.y > 920 - 202 - 404) {
+    // //perso 2
+    // if (controller.up) {
 
-        perso1.jumping = false;
-        perso1.y = 920 - 202 - 404;
-        perso1.y_velocity = 0;
+    //     perso2.jump()
+    // }
 
-    }
+    // if (controller.left) {
 
-    // if rectangle is going off the left of the screen
-    if (perso1.x < -200) {
 
-        perso1.x = 1750;
+    //     perso2.moveLeft();
 
-    } else if (perso1.x > 1750) { // if rectangle goes past right boundary
+    // }
 
-        perso1.x = -200;
+    // if (controller.right) {
 
-    }
+    //     perso2.moveRight();
 
-   
+    // }
+
+    // perso2.update();
+
+
+
+}
+
+function draw() {
     ctx.clearRect(0, 0, W, H); // 🧽
 
     //MAP 1
@@ -150,9 +125,16 @@ loop = function () {
     ctx.drawImage(montain, 0, 350);
     ctx.closePath();
 
+    perso.draw();
+    perso2.draw();
 
-    ctx.drawImage(img, perso1.x, perso1.y, perso1.w, perso1.h);
+}
 
+
+loop = function () {
+
+    update()
+    draw()
 
     // call update when the browser is ready to draw again
     window.requestAnimationFrame(loop);
