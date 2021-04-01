@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html>
 
-
-
 <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles/style.css" />
-    <title>WAROUT OF TIME</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap" rel="stylesheet" />
+  <title>WAROUT OF TIME</title>
 </head>
 
 <body>
+  <!-- <section id="start-game" class="active">
+        <h1>WAROUT OF TIME</h1>
+        <button>LET'S FIGHT</button>
 
-    <div id="game-board">
-        <canvas id="canvas" width="1750" height="920"></canvas>
-    </div>
+    </section> -->
 
+  <!-- <section id="game-over" class="active">
+        <h1>GAME OVER</h1>
+        <button>FIGHT AGAIN</button>
 
-    <img id="montain" src="images/montain.png" alt="montains">
-    <img id="perso" src="images/character-1.png" alt="montains">
-    <!-- <img id="bird" src="images/bird.png" alt="bird"> -->
+    </section> -->
 
+  <div class="health">
+    <progress id="health-perso1" value="300" max="300"></progress>
+    
 
-    <script src="js/characters.js"></script>
-    <script src="js/main.js"></script>
+    <progress id="health-perso2" value="450" max="450"></progress>
+  </div>
+
+  <div id="game-board">
+    <canvas id="canvas" width="1750" height="920"></canvas>
+  </div>
+
+  <img id="montain" src="images/montain.png" alt="montains" />
+  <img id="perso" src="images/character-1.png" alt="perso1" />
+  <img id="perso-l" src="images/character-1-left.png" alt="perso-l" />
+  <img id="perso-r" src="images/character-1-right.png" alt="perso-r" />
+
+  <img id="perso2" src="images/character-2.png" alt="perso2" />
+  <img id="perso2-l" src="images/character-2-left.png" alt="perso2-l" />
+  <img id="perso2-r" src="images/character-2-right.png" alt="perso2-r" />
+
+  <img id="perso2-attack" src="images/perso2-attack-state.png" alt="perso-attack" />
+  <img id="commands" src="images/commands.png" alt="commands" />
+  <!-- <img id="bird" src="images/bird.png" alt="bird"> -->
+
+  <script src="js/time.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/characters.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

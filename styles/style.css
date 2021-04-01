@@ -1,6 +1,87 @@
+body {
+
+  margin: 0;
+  font-family: 'Lexend', sans-serif;
+
+}
+
+
 canvas {
   border: 1px solid black;
+  position: relative;
 }
+
+/* Start game  */
+
+#start-game {
+
+  width: 1750px;
+  height: 920px;
+  background-color: #4DC7E5;
+  display: flex;
+  flex-direction: column;
+}
+
+#start-game>h1 {
+
+  font-size: 150px;
+  margin: 0;
+  text-align: center;
+  margin-top: 70px;
+  color: #786A58;
+}
+
+#start-game>button {
+
+  font-size: 30px;
+  align-self: baseline;
+  margin: auto;
+  height: 80px;
+  width: 350px;
+  border-radius: 20px;
+  border: none;
+  background-color: #009FE3;
+  color: white;
+
+
+}
+
+/* Game over  */
+
+#game-over {
+
+  width: 1750px;
+  height: 920px;
+  background-color: #D6636E;
+  display: flex;
+  flex-direction: column;
+}
+
+#game-over>h1 {
+
+  font-size: 150px;
+  margin: 0;
+  text-align: center;
+  margin: auto;
+  color: white;
+}
+
+#game-over>button {
+
+  font-size: 30px;
+  align-self: baseline;
+  margin: auto;
+  height: 80px;
+  width: 350px;
+  border-radius: 20px;
+  border: none;
+  background-color: #009FE3;
+  color: white;
+
+
+}
+
+
 
 /* <section id="game-over" class="active"> -> .classList.toggle('active') */
 section {
@@ -10,6 +91,50 @@ section {
 section.active {
   display: block;
 }
+
+
+
+/*  HEALTH PERSO   */
+
+/* .health {} */
+
+
+#health-perso1 {
+
+  height: 50px;
+  width: 300px;
+  line-height: 3px;
+  position: absolute;
+  z-index: 999999;
+  margin-top: 30px;
+  margin-left: 40px;
+
+
+
+}
+
+#health-perso2 {
+
+
+  height: 50px;
+  width: 300px;
+  line-height: 3px;
+
+  position: absolute;
+  z-index: 999999;
+  margin-left: 1420px;
+  margin-top: 30px;
+}
+
+#health-perso1::before {
+  content: "GORVENAL";
+}
+
+#health-perso2::before {
+  content: "CYBORG1000";
+}
+
+
 
 #montain {
   display: none;
@@ -49,4 +174,40 @@ section.active {
 
 #perso {
   display: none;
+}
+
+#perso2 {
+  display: none;
+}
+
+#perso2-attack {
+  display: none;
+
+}
+
+#perso-l {
+
+  display: none;
+}
+
+#perso-r {
+
+  display: none;
+}
+
+#perso2-l {
+
+  display: none;
+}
+
+#perso2-r {
+
+  display: none;
+}
+
+#commands {
+  display: none;
+  position: absolute;
+  margin-top: -1071px;
+  margin-left: 415px;
 }
