@@ -1,4 +1,4 @@
-let perso, perso2, loop, loopId, controller, img1, img2, cloud1, cloud2, cloud3, cloud4, directionPerso1, directionPerso2;
+let start, perso, perso2, loop, loopId, controller, img1, img2, cloud1, cloud2, cloud3, cloud4, directionPerso1, directionPerso2;
 // const attacks = [];
 
 
@@ -39,17 +39,25 @@ cloud2 = new Clouds(cloud, 1000, 140, 130, 130 / imgRatioCloud)
 cloud3 = new Clouds(cloud, 1400, 90, 220, 220 / imgRatioCloud)
 cloud4 = new Clouds(cloud, 900, 140, 80, 80 / imgRatioCloud)
 
-// cloud5 = new Clouds(cloudBis, 10, 130, 220, 220 / imgRatioCloud)
+// audio 
+
+let audio = new Audio('audio/music-game.mp3');
+let drum = new Audio('audio/music-game-start.mp3');
+let jump = new Audio('audio/jump.wav');
 
 
-// function startGame() {
+audio.loop = true;
+audio.play();
 
-//     perso1 = new Gorvenal();
-//     perso2 = new Cyborg();
 
-// }
 
-// startGame();
+
+
+
+
+
+
+
 
 
 
@@ -108,11 +116,8 @@ controller = {
 
 function update() {
 
+
     //CONTROL PERSO 1
-    // PersoLeft = false;
-    // PersoRight = false;
-    // Perso2Left = false;
-    // Perso2Right = false;
 
     if (controller.up) {
 
@@ -131,11 +136,6 @@ function update() {
 
     }
 
-    // // identifier sens personnage
-    // if (perso.img = img1_left) {
-    //     PersoLeft = true;
-
-    // }
 
     if (controller.right) {
 
@@ -145,24 +145,12 @@ function update() {
 
     }
 
-    // // identifier sens personnage
-    // if (perso.img = img1_right) {
-    //     PersoRight = true;
-
-    // }
 
     if (controller.attack) {
 
-        // let imgAttack = document.createElement('img');
-        // imgAttack.src = "images/couteau.png";
 
-        // ctx.drawImage(imgAttack, perso.x_attack, perso.y_attack, 96, 126);
-
-        // perso.attack();
-
-        // let bullet = new Bullet(perso.x, perso.y)
-        // bullet.shoot();
         perso.attack()
+
 
     }
 
@@ -173,6 +161,8 @@ function update() {
     if (controller.up2) {
 
         perso2.jump()
+
+
     }
 
     if (controller.left2) {
@@ -185,11 +175,6 @@ function update() {
 
     }
 
-    // //identifier direction personnage
-    // if (perso2.img = img2_left) {
-    //     Perso2Left = true;
-
-    // }
 
     if (controller.right2) {
 
@@ -200,11 +185,6 @@ function update() {
 
     }
 
-    // //identifier direction personnage
-    // if (perso2.img = img2_right) {
-    //     Perso2Right = true;
-
-    // }
 
     if (controller.attack2) {
 
@@ -236,21 +216,6 @@ function update() {
     cloud1.update();
     cloud2.update();
 
-
-
-
-
-    // COLLISION PERSONNAGES 
-
-    // if (perso.y < perso2.x + perso2.w &&
-    //     perso.x + perso.w > perso2.x &&
-    //     perso.y < perso2.y + perso2.h &&
-    //     perso.y + perso.h > perso2.y) {
-
-    //     perso.x += 0.5;
-
-
-    // } else {}
 
     // Si un personnage meurt, il s'envole et l'autre personnage se retrouve au milieu 
     if (perso.health <= 0) {
@@ -367,6 +332,20 @@ loop = function () {
 
 document.getElementById("start").onclick = function () {
     startGame();
+    start = "launch";
+
+
+    // AUDIO TEST
+    audio.pause();
+    audio.currentTime = 0;
+
+
+    audio.play();
+    drum.play();
+    drum.loop = true;
+
+
+
 };
 
 
@@ -383,4 +362,3 @@ function startGame() {
 
 
 }
-
