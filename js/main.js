@@ -1,4 +1,4 @@
-let perso, perso2, loop, controller, img1, img2, cloud1, cloud2, cloud3, cloud4, directionPerso1, directionPerso2;
+let perso, perso2, loop, loopId, controller, img1, img2, cloud1, cloud2, cloud3, cloud4, directionPerso1, directionPerso2;
 // const attacks = [];
 
 
@@ -262,10 +262,13 @@ function update() {
 
 
 
+
             setTimeout(function () {
                 perso2.y += -100
 
 
+
+                document.querySelector("#endgame h1").innerText = "Player 2 WIN"
 
 
 
@@ -289,6 +292,8 @@ function update() {
 
             setTimeout(function () {
                 perso.y += -100
+
+                document.querySelector("#endgame h1").innerText = "Player 1 WIN"
             }, 3000);
 
 
@@ -296,6 +301,11 @@ function update() {
 
         }, 4000);
     } else {}
+
+
+
+
+
 
 }
 
@@ -349,7 +359,7 @@ loop = function () {
     draw()
 
     // call update when the browser is ready to draw again
-    window.requestAnimationFrame(loop);
+    loopId = window.requestAnimationFrame(loop);
 
 };
 
@@ -363,16 +373,14 @@ document.getElementById("start").onclick = function () {
 function startGame() {
 
 
+    document.querySelector('#start-game').classList.toggle('active')
+    document.querySelector('#game-board').classList.toggle('active')
+    document.querySelector('.health').classList.toggle('active')
 
-    // Put vent listener here 
+    window.addEventListener("keydown", controller.keyListener)
+    window.addEventListener("keyup", controller.keyListener);
+    loopId = window.requestAnimationFrame(loop);
 
 
 }
 
-document.querySelector('#start-game').classList.toggle('active')
-document.querySelector('#game-board').classList.toggle('active')
-document.querySelector('.health').classList.toggle('active')
-
-window.addEventListener("keydown", controller.keyListener)
-window.addEventListener("keyup", controller.keyListener);
-window.requestAnimationFrame(loop);

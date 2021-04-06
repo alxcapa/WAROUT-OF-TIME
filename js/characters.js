@@ -234,7 +234,7 @@ class Cyborg extends Gorvenal {
                 // ctx.drawImage(imgAttackR2, this.x_attack += 8, this.y_attack, this.w_couteau, this.h_couteau);
 
                 ctx.beginPath();
-                ctx.arc(this.x_attack += 8, this.y_attack, 10, 0, Math.PI * 2);
+                ctx.arc(this.x_attack += 12, this.y_attack, 10, 0, Math.PI * 2);
 
 
 
@@ -247,7 +247,7 @@ class Cyborg extends Gorvenal {
             } else if (directionPerso2 === 'left') {
                 // ctx.drawImage(imgAttackL2, this.x_attack -= 8, this.y_attack, this.w_couteau, this.h_couteau);
                 ctx.beginPath();
-                ctx.arc(this.x_attack -= 8, this.y_attack, 10, 0, Math.PI * 2);
+                ctx.arc(this.x_attack -= 12, this.y_attack, 10, 0, Math.PI * 2);
                 ctx.fillStyle = "red";
                 ctx.fill();
                 ctx.closePath();

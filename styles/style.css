@@ -104,6 +104,17 @@ section.active {
 
 /* Game over  */
 
+#endgame {
+
+  position: absolute;
+  z-index: 999999;
+  margin-left: 580px;
+  margin-top: 192px;
+  font-size: 50px;
+  color: white;
+
+}
+
 #game-over {
 
   width: 1750px;
