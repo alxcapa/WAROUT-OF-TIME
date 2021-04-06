@@ -58,11 +58,6 @@ audio.play();
 
 
 
-
-
-
-
-
 controller = {
     left: false,
     right: false,
@@ -340,7 +335,7 @@ document.getElementById("start").onclick = function () {
     audio.currentTime = 0;
 
 
-    audio.play();
+
     drum.play();
     drum.loop = true;
 
