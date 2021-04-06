@@ -85,6 +85,18 @@ section.active {
   text-align: center;
   margin-top: 70px;
   color: #786A58;
+
+}
+
+#start-game>p {
+
+
+  width: 700px;
+  margin: auto;
+  margin-top: 70px;
+
+
+
 }
 
 #start-game>button {

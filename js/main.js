@@ -199,7 +199,8 @@ function update() {
     drum.pause();
     drum.currentTime = 0;
 
-    endsong.start();
+    endsong.play();
+    endsong.loop = true;
 
     setTimeout(function () {
       perso.img = img1;
