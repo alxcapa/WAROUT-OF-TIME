@@ -1,4 +1,4 @@
-let perso, perso2, loop, controller, img1, img2, cloud1, cloud2, cloud3, cloud4, direction;
+let perso, perso2, loop, controller, img1, img2, cloud1, cloud2, cloud3, cloud4, directionPerso1, directionPerso2;
 // const attacks = [];
 
 
@@ -31,8 +31,8 @@ const W = ctx.canvas.width;
 const H = ctx.canvas.height;
 
 
-perso = new Gorvenal(250, 350, 150, 150 / imgRatio1, img1, 300);
-perso2 = new Cyborg(1200, 300, 200, 200 / imgRatio2, img2, 450);
+perso = new Gorvenal(250, 350, 150, 150 / imgRatio1, img1, 600);
+perso2 = new Cyborg(1200, 300, 200, 200 / imgRatio2, img2, 750);
 
 cloud1 = new Clouds(cloud, 10, 90, 280, 280 / imgRatioCloud)
 cloud2 = new Clouds(cloud, 1000, 140, 130, 130 / imgRatioCloud)
@@ -63,7 +63,7 @@ controller = {
     left2: false,
     right2: false,
     up2: false,
-    attack2: false,
+    attack2: true,
     commands: false,
     keyListener: function (event) {
 
@@ -127,7 +127,7 @@ function update() {
 
         perso.moveLeft();
         perso.img = img1_left
-        direction = 'left';
+        directionPerso1 = 'left';
 
     }
 
@@ -141,7 +141,7 @@ function update() {
 
         perso.moveRight();
         perso.img = img1_right
-        direction = 'right';
+        directionPerso1 = 'right';
 
     }
 
@@ -162,7 +162,7 @@ function update() {
 
         // let bullet = new Bullet(perso.x, perso.y)
         // bullet.shoot();
-
+        perso.attack()
 
     }
 
@@ -180,6 +180,7 @@ function update() {
 
         perso2.moveLeft();
         perso2.img = img2_left;
+        directionPerso2 = 'left';
 
 
     }
@@ -194,6 +195,7 @@ function update() {
 
         perso2.moveRight();
         perso2.img = img2_right;
+        directionPerso2 = 'right';
 
 
     }
@@ -236,6 +238,8 @@ function update() {
 
 
 
+
+
     // COLLISION PERSONNAGES 
 
     // if (perso.y < perso2.x + perso2.w &&
@@ -260,7 +264,13 @@ function update() {
 
             setTimeout(function () {
                 perso2.y += -100
-            }, 2000);
+
+
+
+
+
+
+            }, 3000);
 
 
         }, 4000);
@@ -279,7 +289,7 @@ function update() {
 
             setTimeout(function () {
                 perso.y += -100
-            }, 2000);
+            }, 3000);
 
 
 
@@ -290,7 +300,7 @@ function update() {
 }
 
 function draw() {
-    ctx.clearRect(0, 0, W, H); // 🧽
+    ctx.clearRect(0, 0, W, H);
 
     //MAP 1
     ctx.beginPath();
@@ -324,6 +334,9 @@ function draw() {
     perso2.draw();
 
     perso.attack()
+    perso2.attack2()
+    // let bullet = new Bullet(perso2.x, perso.y);
+    // bullet.bullet()
 
 
 
@@ -340,7 +353,26 @@ loop = function () {
 
 };
 
+// LAUNCH THE GAME 
+
+document.getElementById("start").onclick = function () {
+    startGame();
+};
+
+
+function startGame() {
+
+
+
+    // Put vent listener here 
+
+
+}
+
+document.querySelector('#start-game').classList.toggle('active')
+document.querySelector('#game-board').classList.toggle('active')
+document.querySelector('.health').classList.toggle('active')
+
 window.addEventListener("keydown", controller.keyListener)
 window.addEventListener("keyup", controller.keyListener);
-// window.addEventListener("keypress", controller_time.keyListener);
 window.requestAnimationFrame(loop);

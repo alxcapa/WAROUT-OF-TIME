@@ -123,11 +123,13 @@ class Gorvenal {
             let imgAttackL = document.createElement('img');
             imgAttackL.src = "images/couteau-l.png";
 
+
+
             // Checking direction 
-            if (direction === 'right') {
-                ctx.drawImage(imgAttackR, this.x_attack += 8, this.y_attack, this.w_couteau, this.h_couteau);
-            } else if (direction === 'left') {
-                ctx.drawImage(imgAttackL, this.x_attack -= 8, this.y_attack, this.w_couteau, this.h_couteau);
+            if (directionPerso1 === 'right') {
+                let cut = ctx.drawImage(imgAttackR, this.x_attack += 8, this.y_attack, this.w_couteau, this.h_couteau);
+            } else if (directionPerso1 === 'left') {
+                let cut = ctx.drawImage(imgAttackL, this.x_attack -= 8, this.y_attack, this.w_couteau, this.h_couteau);
 
             }
 
@@ -138,14 +140,29 @@ class Gorvenal {
                 this.y_attack < perso2.y + perso2.h &&
                 this.y_attack + this.h_couteau > perso2.y) {
 
-                console.log('collision')
+
                 //REDUCE LIFE ON LIFEBAR & HEALTHCLASS
                 let healthPerso2 = document.getElementById("health-perso2")
-                healthPerso2.value -= 0.2;
-                perso2.health -= 0.2;
+                healthPerso2.value -= 1;
+                perso2.health -= 1;
+
+                // healthNumbPerso1.innerHTML = "";
+
+                // healthNumbPerso1.innerHTML = perso.health;
+                // document.body.appendChild(healthNumbPerso1);
 
                 //COUTEAU ATTACHE AU PERSO2    
                 this.x_attack = perso2.x;
+
+
+                // if (this.x_attack === perso2.x) {
+
+
+
+
+
+                // }
+
 
                 //SI le personnage saute, le couteau s'en va
                 if (perso2.jumping === true) {
@@ -187,15 +204,94 @@ class Gorvenal {
 
 class Cyborg extends Gorvenal {
 
-    constructor(x, y, w, h, img, health) {
+    constructor(x_attack, y_attack, x, y, w, h, img, health) {
 
 
-        super(x, y, w, h, img, health)
+        super(x_attack, y_attack, x, y, w, h, img, health)
 
     }
 
 
     attack2() {
+
+        if (controller.attack2 === false) {
+
+            // ctx.beginPath();
+            // ctx.arc(this.x_attack += i, this.y_attack, 10, 0, Math.PI * 2);
+            // ctx.fillStyle = "red";
+            // ctx.fill();
+            // ctx.closePath();
+
+
+            // let imgAttackR2 = document.createElement('img');
+            // imgAttackR2.src = "images/couteau-r.png";
+
+            // let imgAttackL2 = document.createElement('img');
+            // imgAttackL2.src = "images/couteau-l.png";
+
+            // Checking direction 
+            if (directionPerso2 === 'right') {
+                // ctx.drawImage(imgAttackR2, this.x_attack += 8, this.y_attack, this.w_couteau, this.h_couteau);
+
+                ctx.beginPath();
+                ctx.arc(this.x_attack += 8, this.y_attack, 10, 0, Math.PI * 2);
+
+
+
+                ctx.fillStyle = "red";
+                ctx.fill();
+                ctx.closePath();
+
+
+
+            } else if (directionPerso2 === 'left') {
+                // ctx.drawImage(imgAttackL2, this.x_attack -= 8, this.y_attack, this.w_couteau, this.h_couteau);
+                ctx.beginPath();
+                ctx.arc(this.x_attack -= 8, this.y_attack, 10, 0, Math.PI * 2);
+                ctx.fillStyle = "red";
+                ctx.fill();
+                ctx.closePath();
+
+            }
+
+            // Collision couteau / perso2
+
+            if (this.x_attack < perso.x + perso.w &&
+                this.x_attack + this.w_couteau > perso.x &&
+                this.y_attack < perso.y + perso.h &&
+                this.y_attack + this.h_couteau > perso.y) {
+
+
+                //REDUCE LIFE ON LIFEBAR & HEALTHCLASS
+                let healthPerso = document.getElementById("health-perso1")
+                healthPerso.value -= 1;
+                perso.health -= 1;
+
+                //COUTEAU ATTACHE AU PERSO2    
+                // this.x_attack = perso.x;
+
+                //SI le personnage saute, le couteau s'en va
+                if (perso.jumping === true) {
+
+                    this.x_attack = this.x + this.w - 90;
+                    this.y_attack = this.y + 90;
+
+                }
+            }
+
+
+        } else {
+            this.x_attack = this.x + this.w - 90;
+            this.y_attack = this.y + 90;
+
+
+        }
+
+
+    }
+
+    specialAttack() {
+
 
 
         if (controller.attack2 === true) {
@@ -213,64 +309,45 @@ class Cyborg extends Gorvenal {
 
 
     }
+
+
+
+
+
 }
 
 
 
 
-// class Bullet {
-//     constructor(x, y) {
-//         this.x = x;
-//         this.y = y;
+class Bullet {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
 
-//         this.x_attack = this.x;
-//         this.y_attack = this.y;
-
-//     }
-
-//     shoot() {
+        this.x_attack = this.x;
+        this.y_attack = this.y;
 
 
 
-//         if (controller.attack) {
+    }
+
+    bullet() {
 
 
 
-//             ctx.beginPath();
-//             ctx.arc(this.x_attack += 8, this.y_attack, 10, 0, Math.PI * 2);
-//             ctx.fillStyle = "red";
-//             ctx.fill();
-//             ctx.closePath();
+        let imgAttackR = document.createElement('img');
+        imgAttackR.src = "images/couteau-r.png";
+
+        let imgAttackL = document.createElement('img');
+        imgAttackL.src = "images/couteau-l.png";
 
 
-//         } else if (perso.x_attack === 1000) {
-//             ctx.clearRect(this.x_attack, this.y_attack, 2 * Math.PI, 2 * Math.PI);
-
-//         } else {
-//             this.x_attack = this.x + this.w - 90;
-//             this.y_attack = this.y + 90;
-
-//         }
-
-
-//         if (this.y_attack < perso2.x + perso2.w &&
-//             this.x_attack + this.w_couteau > perso2.x &&
-//             this.y_attack < perso2.y_attack + perso2.h &&
-//             this.y_attack + this.h_couteau > perso2.y) {
-
-//             let healthPerso2 = document.getElementById("health-perso2")
-//             healthPerso2.value -= 0.2;
-//             perso2.health -= 0.2;
-//         } else {
+        return ctx.drawImage(imgAttackR, this.x_attack += 8, this.y_attack, 76, 106);
 
 
 
-//         }
-
-
-//     }
+    }
 
 
 
-
-// }
+}

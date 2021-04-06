@@ -5,21 +5,77 @@ body {
 
 }
 
+.copyright {
+
+  margin-left: auto;
+  margin-right: 28px;
+  font-size: 20px;
+  width: 1667px;
+}
+
+.copyright img {
+
+  height: 80px;
+  float: right;
+  padding-left: 20px;
+  margin-bottom: 20px;
+
+}
+
+.copyright>p {
+
+  margin-top: 36px;
+}
+
+/* timer */
+#timer {
+
+  margin-left: 800px;
+  color: white;
+  font-size: 40px;
+  margin-top: 25px;
+
+  position: absolute;
+  z-index: 99999999;
+
+
+}
 
 canvas {
-  border: 1px solid black;
+
   position: relative;
 }
 
+#game-board.active {
+  display: none;
+}
+
+#game-board {
+  display: block;
+}
+
+
 /* Start game  */
 
-#start-game {
+
+/* <section id="game-over" class="active"> -> .classList.toggle('active') */
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+
+#start-game.active {
 
   width: 1750px;
   height: 920px;
   background-color: #4DC7E5;
   display: flex;
   flex-direction: column;
+
 }
 
 #start-game>h1 {
@@ -57,6 +113,12 @@ canvas {
   flex-direction: column;
 }
 
+#game-over.active {
+
+
+  display: none;
+}
+
 #game-over>h1 {
 
   font-size: 150px;
@@ -83,14 +145,6 @@ canvas {
 
 
 
-/* <section id="game-over" class="active"> -> .classList.toggle('active') */
-section {
-  display: none;
-}
-
-section.active {
-  display: block;
-}
 
 
 
@@ -98,16 +152,33 @@ section.active {
 
 /* .health {} */
 
+.health {
+
+  display: none;
+
+
+}
+
+
+
+.health.active {
+
+  display: block;
+}
+
 
 #health-perso1 {
 
-  height: 50px;
+  height: 28px;
   width: 300px;
-  line-height: 3px;
+
   position: absolute;
   z-index: 999999;
-  margin-top: 30px;
+  margin-top: 7px;
   margin-left: 40px;
+  line-height: 55px;
+
+
 
 
 
@@ -116,24 +187,51 @@ section.active {
 #health-perso2 {
 
 
-  height: 50px;
+  height: 28px;
   width: 300px;
-  line-height: 3px;
+
 
   position: absolute;
   z-index: 999999;
   margin-left: 1420px;
-  margin-top: 30px;
+  margin-top: 7px;
+  ;
+  line-height: 55px;
 }
 
 #health-perso1::before {
-  content: "GORVENAL";
+  content: "GORVENAL | "attr(value)"PV";
 }
 
 #health-perso2::before {
-  content: "CYBORG1000";
+  content: "CYBORG1000 | "attr(value)"PV";
 }
 
+
+
+progress[value]::-webkit-progress-value {
+  background-color: rgb(67, 221, 175)
+}
+
+progress[value] {
+
+  appearance: none;
+
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+/* progress:after {
+  content: attr(value)'%';
+
+} */
+
+
+/* MAP */
 
 
 #montain {
