@@ -8,3 +8,6 @@ Welcome to this immersive fight in 2D, first read this :
 - Press SHIFT LEFT or RIGHT to see commands during the game
 
 All is good, Let's fight !
+
+
+© ALL RIGHTS RESERVED - ALEXANDRE CAPALDI 2021
