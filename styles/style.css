@@ -92,8 +92,21 @@ section.active {
 
 
   width: 700px;
-  margin: auto;
+  margin-top: -200px;
+  margin-left: 255px;
+  line-height: 25px;
+
+
+}
+
+
+#start-game>img {
+
+  margin-left: 836px;
   margin-top: 70px;
+  width: 700px;
+
+
 
 
 
