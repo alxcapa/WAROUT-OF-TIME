@@ -173,15 +173,17 @@ function update() {
   if (perso.health <= 0) {
     perso.y += -100;
 
+    drum.pause();
+    drum.currentTime = 0;
+
+    endsong.play();
+    endsong.loop = true;
+    
     setTimeout(function () {
       perso2.img = img2;
       perso2.x = 800;
 
-      drum.pause();
-      drum.currentTime = 0;
 
-      endsong.play();
-      endsong.loop = true;
       //   endsong.loop = true;
 
       setTimeout(function () {
@@ -190,8 +192,7 @@ function update() {
         document.querySelector("#endgame h1").innerText = "Player 2 WIN";
       }, 3000);
     }, 4000);
-  } else {
-  }
+  } else {}
 
   if (perso2.health <= 0) {
     perso2.y += -100;
@@ -212,8 +213,7 @@ function update() {
         document.querySelector("#endgame h1").innerText = "Player 1 WIN";
       }, 3000);
     }, 4000);
-  } else {
-  }
+  } else {}
 }
 
 function draw() {

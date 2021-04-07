@@ -1,12 +1,9 @@
 body {
-
   margin: 0;
-  font-family: 'Lexend', sans-serif;
-
+  font-family: "Lexend", sans-serif;
 }
 
 .copyright {
-
   margin-left: auto;
   margin-right: 28px;
   font-size: 16px;
@@ -14,22 +11,18 @@ body {
 }
 
 .copyright img {
-
   height: 80px;
   float: right;
   padding-left: 20px;
   margin-bottom: 20px;
-
 }
 
-.copyright>p {
-
+.copyright > p {
   margin-top: 36px;
 }
 
 /* timer */
 #timer {
-
   margin-left: 800px;
   color: white;
   font-size: 40px;
@@ -37,12 +30,9 @@ body {
 
   position: absolute;
   z-index: 99999999;
-
-
 }
 
 canvas {
-
   position: relative;
 }
 
@@ -54,9 +44,7 @@ canvas {
   display: block;
 }
 
-
 /* Start game  */
-
 
 /* <section id="game-over" class="active"> -> .classList.toggle('active') */
 section {
@@ -67,52 +55,36 @@ section.active {
   display: block;
 }
 
-
 #start-game.active {
-
   width: 1750px;
   height: 920px;
-  background-color: #4DC7E5;
+  background-color: #4dc7e5;
   display: flex;
   flex-direction: column;
-
 }
 
-#start-game>h1 {
-
+#start-game > h1 {
   font-size: 150px;
   margin: 0;
   text-align: center;
   margin-top: 70px;
-  color: #786A58;
-
+  color: #786a58;
 }
 
-#start-game>p {
-
-
-  width: 700px;
+#start-game > p {
+  width: 575px;
   margin-top: -200px;
   margin-left: 255px;
   line-height: 25px;
-
-
 }
 
-
-#start-game>img {
-
+#start-game > img {
   margin-left: 836px;
   margin-top: 70px;
   width: 700px;
-
-
-
-
 }
 
-#start-game>button {
-
+#start-game > button {
   font-size: 30px;
   align-self: baseline;
   margin: auto;
@@ -120,42 +92,34 @@ section.active {
   width: 350px;
   border-radius: 20px;
   border: none;
-  background-color: #009FE3;
+  background-color: #009fe3;
   color: white;
-
-
 }
 
 /* Game over  */
 
 #endgame {
-
   position: absolute;
   z-index: 999999;
   margin-left: 580px;
   margin-top: 192px;
   font-size: 50px;
   color: white;
-
 }
 
 #game-over {
-
   width: 1750px;
   height: 920px;
-  background-color: #D6636E;
+  background-color: #d6636e;
   display: flex;
   flex-direction: column;
 }
 
 #game-over.active {
-
-
   display: none;
 }
 
-#game-over>h1 {
-
+#game-over > h1 {
   font-size: 150px;
   margin: 0;
   text-align: center;
@@ -163,8 +127,7 @@ section.active {
   color: white;
 }
 
-#game-over>button {
-
+#game-over > button {
   font-size: 30px;
   align-self: baseline;
   margin: auto;
@@ -172,38 +135,23 @@ section.active {
   width: 350px;
   border-radius: 20px;
   border: none;
-  background-color: #009FE3;
+  background-color: #009fe3;
   color: white;
-
-
 }
-
-
-
-
-
 
 /*  HEALTH PERSO   */
 
 /* .health {} */
 
 .health {
-
   display: none;
-
-
 }
 
-
-
 .health.active {
-
   display: block;
 }
 
-
 #health-perso1 {
-
   height: 28px;
   width: 300px;
 
@@ -212,46 +160,33 @@ section.active {
   margin-top: 7px;
   margin-left: 40px;
   line-height: 55px;
-
-
-
-
-
 }
 
 #health-perso2 {
-
-
   height: 28px;
   width: 300px;
-
 
   position: absolute;
   z-index: 999999;
   margin-left: 1420px;
   margin-top: 7px;
-  ;
   line-height: 55px;
 }
 
 #health-perso1::before {
-  content: "GORVENAL | "attr(value)"PV";
+  content: "GORVENAL | " attr(value) "PV";
 }
 
 #health-perso2::before {
-  content: "CYBORG1000 | "attr(value)"PV";
+  content: "CYBORG1000 | " attr(value) "PV";
 }
 
-
-
 progress[value]::-webkit-progress-value {
-  background-color: rgb(67, 221, 175)
+  background-color: rgb(67, 221, 175);
 }
 
 progress[value] {
-
   appearance: none;
-
 }
 
 progress[value]::-webkit-progress-bar {
@@ -265,9 +200,7 @@ progress[value]::-webkit-progress-bar {
 
 } */
 
-
 /* MAP */
-
 
 #montain {
   display: none;
@@ -315,26 +248,21 @@ progress[value]::-webkit-progress-bar {
 
 #perso2-attack {
   display: none;
-
 }
 
 #perso-l {
-
   display: none;
 }
 
 #perso-r {
-
   display: none;
 }
 
 #perso2-l {
-
   display: none;
 }
 
 #perso2-r {
-
   display: none;
 }
 
