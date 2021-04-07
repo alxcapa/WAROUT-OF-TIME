@@ -107,6 +107,15 @@ section.active {
   color: white;
 }
 
+#endgame > span {
+  color: white;
+  width: 150px;
+  padding: 10px;
+
+  font-size: 20px;
+  border-radius: 20px;
+}
+
 #game-over {
   width: 1750px;
   height: 920px;

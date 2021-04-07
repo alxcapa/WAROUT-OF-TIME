@@ -178,7 +178,7 @@ function update() {
 
     endsong.play();
     endsong.loop = true;
-    
+
     setTimeout(function () {
       perso2.img = img2;
       perso2.x = 800;
@@ -190,6 +190,7 @@ function update() {
         perso2.y += -100;
 
         document.querySelector("#endgame h1").innerText = "Player 2 WIN";
+        document.querySelector("#endgame span").innerText = "Fight again";
       }, 3000);
     }, 4000);
   } else {}
@@ -209,9 +210,18 @@ function update() {
 
       setTimeout(function () {
         perso.y += -100;
-
         document.querySelector("#endgame h1").innerText = "Player 1 WIN";
+
+        document.querySelector("#endgame span").innerText = "Fight again";
+
+
+
+
+
+
       }, 3000);
+
+
     }, 4000);
   } else {}
 }
@@ -275,6 +285,10 @@ document.getElementById("start").onclick = function () {
 
   drum.play();
   drum.loop = true;
+};
+
+document.getElementById("restart").onclick = function () {
+  document.location.reload(true);
 };
 
 function startGame() {
