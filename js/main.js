@@ -58,10 +58,10 @@ cloud4 = new Clouds(cloud, 900, 140, 80, 80 / imgRatioCloud);
 
 // audio
 
-let audio = new Audio("audio/music-game.mp3");
-let drum = new Audio("audio/music-game-start.mp3");
+let audio = new Audio("audio/music-game-alexandre-capaldi.mp3");
+let drum = new Audio("audio/music-game-start-alexandre-capaldi.mp3");
 let jump = new Audio("audio/jump.wav");
-let endsong = new Audio("audio/music-game-end.mp3");
+let endsong = new Audio("audio/music-game-end-alexandre-capaldi.mp3");
 
 
 
