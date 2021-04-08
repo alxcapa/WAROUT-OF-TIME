@@ -49,7 +49,7 @@ const W = ctx.canvas.width;
 const H = ctx.canvas.height;
 
 perso = new Gorvenal(250, 350, 150, 150 / imgRatio1, img1, 600);
-perso2 = new Cyborg(1200, 300, 200, 200 / imgRatio2, img2, 750);
+perso2 = new Cyborg(1200, 300, 175, 175 / imgRatio2, img2, 750);
 
 cloud1 = new Clouds(cloud, 10, 90, 280, 280 / imgRatioCloud);
 cloud2 = new Clouds(cloud, 1000, 140, 130, 130 / imgRatioCloud);

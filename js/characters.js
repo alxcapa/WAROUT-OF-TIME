@@ -327,22 +327,22 @@ class Bullet {
 
     }
 
-    bullet() {
+    // bullet() {
 
 
 
-        let imgAttackR = document.createElement('img');
-        imgAttackR.src = "images/couteau-r.png";
+    //     let imgAttackR = document.createElement('img');
+    //     imgAttackR.src = "images/couteau-r.png";
 
-        let imgAttackL = document.createElement('img');
-        imgAttackL.src = "images/couteau-l.png";
-
-
-        return ctx.drawImage(imgAttackR, this.x_attack += 8, this.y_attack, 76, 106);
+    //     let imgAttackL = document.createElement('img');
+    //     imgAttackL.src = "images/couteau-l.png";
 
 
+    //     return ctx.drawImage(imgAttackR, this.x_attack += 8, this.y_attack, 76, 106);
 
-    }
+
+
+    // }
 
 
 
