@@ -146,23 +146,10 @@ class Gorvenal {
                 healthPerso2.value -= 1;
                 perso2.health -= 1;
 
-                // healthNumbPerso1.innerHTML = "";
-
-                // healthNumbPerso1.innerHTML = perso.health;
-                // document.body.appendChild(healthNumbPerso1);
+                ;
 
                 //COUTEAU ATTACHE AU PERSO2    
                 this.x_attack = perso2.x;
-
-
-                // if (this.x_attack === perso2.x) {
-
-
-
-
-
-                // }
-
 
                 //SI le personnage saute, le couteau s'en va
                 if (perso2.jumping === true) {
@@ -180,12 +167,21 @@ class Gorvenal {
 
         }
 
-        // controller.attack = false;
+        // set color lifeBar
+        let health1 = document.getElementById('health-perso1').value
+        let health2 = document.getElementById('health-perso2').value
 
+        if (health1 <= 300) {
+            document.getElementById("health-perso1").classList.remove('green-progress');
+            document.getElementById("health-perso1").classList.add('orange-progress');
 
+        }
 
-        // } else {}
+        if (health2 <= 375) {
+            document.getElementById("health-perso2").classList.remove('green-progress');
+            document.getElementById("health-perso2").classList.add('orange-progress');
 
+        }
 
     }
 

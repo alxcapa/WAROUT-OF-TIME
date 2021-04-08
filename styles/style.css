@@ -32,6 +32,10 @@ body {
   z-index: 99999999;
 }
 
+#timer.active {
+  display: none;
+}
+
 canvas {
   position: relative;
 }
@@ -190,15 +194,29 @@ section.active {
   content: "CYBORG1000 | " attr(value) "PV";
 }
 
-progress[value]::-webkit-progress-value {
+.green-progress[value]::-webkit-progress-value {
   background-color: rgb(67, 221, 175);
 }
 
-progress[value] {
+.green-progress[value] {
   appearance: none;
 }
 
-progress[value]::-webkit-progress-bar {
+.green-progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+.orange-progress[value]::-webkit-progress-value {
+  background-color: rgb(216, 176, 65);
+}
+
+.orange-progress[value] {
+  appearance: none;
+}
+
+.orange-progress[value]::-webkit-progress-bar {
   background-color: #eee;
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
@@ -280,4 +298,19 @@ progress[value]::-webkit-progress-bar {
   position: absolute;
   margin-top: -1071px;
   margin-left: 415px;
+}
+
+#rs-canvas {
+  float: right;
+  position: absolute;
+  margin-top: -53px;
+  margin-left: 28px;
+}
+
+#rs-canvas.active {
+  display: none;
+}
+
+#rs-canvas img {
+  width: 30px;
 }
