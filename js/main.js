@@ -210,6 +210,8 @@ function update() {
         document.querySelector("#endgame span").innerText = "Fight again";
 
 
+
+
       }, 3000);
     }, 4000);
   } else {}

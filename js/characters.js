@@ -260,8 +260,8 @@ class Cyborg extends Gorvenal {
 
                 //REDUCE LIFE ON LIFEBAR & HEALTHCLASS
                 let healthPerso = document.getElementById("health-perso1")
-                healthPerso.value -= 1;
-                perso.health -= 1;
+                healthPerso.value -= 1.5;
+                perso.health -= 1.5;
 
                 //COUTEAU ATTACHE AU PERSO2    
                 // this.x_attack = perso.x;
