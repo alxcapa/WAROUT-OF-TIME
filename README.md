@@ -15,4 +15,4 @@ All is good, Let's fight !
 
 
 
-© all rights reserved - ALEXANDRE CAPALDI 2021
+© all rights reserved [music, design, code of the app] - ALEXANDRE CAPALDI 2021
