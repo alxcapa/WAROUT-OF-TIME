@@ -1,74 +1,87 @@
+// let executed = false;
+
 // document.getElementById('timer').innerHTML =
-//     001 + ":" + 00;
-// startTimer();
+//   00 + ":" + 03;
+
 
 // function startTimer() {
-//     var presentTime = document.getElementById('timer').innerHTML;
-//     var timeArray = presentTime.split(/[:]+/);
-//     var m = timeArray[0];
-//     var s = checkSecond((timeArray[1] - 1));
-//     if (s === 59) {
-//         m = m - 1
-//     }
 
-//     if (m < 0) {
+//   var presentTime = document.getElementById('timer').innerHTML;
+//   var timeArray = presentTime.split(/[:]+/);
+//   var m = timeArray[0];
+//   var s = checkSecond((timeArray[1] - 1));
+//   if (s === 59) {
+//     m = m - 1
+//   }
 
-//         document.querySelector('#game-over').classList.toggle('active')
-//         document.querySelector('#game-board').classList.toggle('active')
-//         document.querySelector('.health').classList.toggle('active')
-//     }
 
-//     document.getElementById('timer').innerHTML =
-//         m + ":" + s;
-//     console.log(m)
-//     setTimeout(startTimer, 1000);
+//   document.getElementById('timer').innerHTML =
+//     m + ":" + s;
+
+//   let time = setTimeout(startTimer, 1000);
+
+
+
+//   if (presentTime === "0:00") {
+
+//     clearInterval(time)
+//     document.getElementById('timer').classList.toggle("active")
+//     arrP1.push(1)
+//     arrP2.push(1)
+
+//     setTimeout(function () {
+
+//       perso.x = 250
+//       perso.y = 350
+//       perso.health = 600
+
+//       perso2.x = 1200
+//       perso2.y = 300
+//       perso2.health = 750
+
+
+//     }, 7000);
+
+
+//   }
+
+
 // }
 
 // function checkSecond(sec) {
-//     if (sec < 10 && sec >= 0) {
-//         sec = "0" + sec
-//     }; // add zero in front of numbers < 10
-//     if (sec < 0) {
-//         sec = "59"
-//     };
-//     return sec;
+//   if (sec < 10 && sec >= 0) {
+//     sec = "0" + sec
+//   }; // add zero in front of numbers < 10
+//   if (sec < 0) {
+//     sec = "59"
+//   };
+//   return sec;
 // }
 
+// function checkWinner() {
 
-class Chronometer {
-    constructor() {
-      this.currentTime = 0;
-      this.intervalId = 0;
-    }
-    startClick(callback) {
-      this.intervalId = setInterval(() => {
-        this.currentTime++;
-        if (callback) callback()
-      }, 1000)
-    }
-    getMinutes() {
-      return Math.floor(this.currentTime / 60)
-    }
-    getSeconds() {
-      return this.currentTime % 60; // rest of the division by 60
-    }
-    twoDigitsNumber(num) {
-      if (num < 10) {
-        return `0${num}`; // add a 0
-      } else {
-        return `${num}`;  // just convert to a string
-      }
-    }
-    stopClick() {
-      clearInterval(this.intervalId);
-    }
-    resetClick() {
-      this.currentTime = 0;
-    }
-    splitClick() {
-      const mm = this.twoDigitsNumber(this.getMinutes());
-      const ss = this.twoDigitsNumber(this.getSeconds());
-  
-      return `${mm}:${ss}`;
-    }
-  }
+//   if (perso.health <= 0 && !executed) {
+//     executed = true;
+//     arrP2.push(1)
+
+//     setTimeout(function () {
+//       executed = false;
+//     }, 3000);
+
+//   }
+//   if (perso2.health <= 0 && !executed) {
+//     executed = true;
+//     arrP1.push(1)
+
+//     setTimeout(function () {
+//       executed = false;
+//     }, 3000);
+
+//   }
+
+//   if (arrP1.length >= 3) {
+//     console.log("diplaywinner")
+
+//   }
+
+// }

@@ -12,7 +12,16 @@ let start,
   cloud4,
   directionPerso1,
   directionPerso2;
+
+//Tab victories by rounds
+// let arrP1 = []
+// let arrP2 = []
+
+
 // const attacks = [];
+
+
+
 
 const ctx = document.querySelector("#canvas").getContext("2d");
 
@@ -53,6 +62,10 @@ let audio = new Audio("audio/music-game.mp3");
 let drum = new Audio("audio/music-game-start.mp3");
 let jump = new Audio("audio/jump.wav");
 let endsong = new Audio("audio/music-game-end.mp3");
+
+
+
+
 
 setTimeout(function () {
   audio.loop = true;
@@ -179,18 +192,24 @@ function update() {
     endsong.play();
     endsong.loop = true;
 
+
+
+
+
     setTimeout(function () {
       perso2.img = img2;
       perso2.x = 800;
-
+      // checkWinner();
 
       //   endsong.loop = true;
 
       setTimeout(function () {
         perso2.y += -100;
-
+        document.querySelector("#endgame span").style.border = "1px white solid";
         document.querySelector("#endgame h1").innerText = "Player 2 WIN";
         document.querySelector("#endgame span").innerText = "Fight again";
+
+
       }, 3000);
     }, 4000);
   } else {}
@@ -204,19 +223,18 @@ function update() {
     endsong.play();
     endsong.loop = true;
 
+
+
     setTimeout(function () {
       perso.img = img1;
       perso.x = 800;
-
+      // checkWinner();
       setTimeout(function () {
         perso.y += -100;
+        document.querySelector("#endgame span").style.border = "1px white solid";
         document.querySelector("#endgame h1").innerText = "Player 1 WIN";
 
         document.querySelector("#endgame span").innerText = "Fight again";
-
-
-
-
 
 
       }, 3000);
@@ -224,6 +242,14 @@ function update() {
 
     }, 4000);
   } else {}
+
+
+
+
+
+
+
+
 }
 
 function draw() {
@@ -279,12 +305,7 @@ document.getElementById("start").onclick = function () {
   startGame();
   start = "launch";
 
-  // AUDIO TEST
-  audio.pause();
-  audio.currentTime = 0;
 
-  drum.play();
-  drum.loop = true;
 };
 
 document.getElementById("restart").onclick = function () {
@@ -292,11 +313,23 @@ document.getElementById("restart").onclick = function () {
 };
 
 function startGame() {
+
+  // AUDIO TEST
+  audio.pause();
+  audio.currentTime = 0;
+
+  drum.play();
+  drum.loop = true;
+
   document.querySelector("#start-game").classList.toggle("active");
   document.querySelector("#game-board").classList.toggle("active");
   document.querySelector(".health").classList.toggle("active");
+  document.querySelector('#rs-canvas').classList.toggle("active")
+  document.getElementById("endgame").classList.toggle("active");
 
   window.addEventListener("keydown", controller.keyListener);
   window.addEventListener("keyup", controller.keyListener);
+
   loopId = window.requestAnimationFrame(loop);
+  // startTimer();
 }
